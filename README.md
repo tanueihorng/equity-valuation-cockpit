@@ -37,6 +37,22 @@ It ships in **two formats that run the identical math and reconcile to the cent:
 
 ---
 
+## 🎯 Why this exists
+
+> Most tools tell you **what a stock might be worth.** Almost none tell you **at what price it's actually safe to buy** — so investors overpay in bull markets, or freeze because *"everything looks overvalued."*
+
+For a serious individual investor there's a gap between free, shallow tools (one opaque "fair value," often wrong) and \$24k/year professional terminals. This fills it:
+
+- **Glass box, not black box** — every method and assumption is visible and editable.
+- **From *"what's it worth"* → *"buy below \$X"*** — a margin-of-safety bar that scales with business quality and market regime (a wide-moat compounder needs ~10%; a weak business ~50%).
+- **It discriminates** instead of going perma-bear — *cheap-for-this-stock* vs *expensive-but-familiar*, via valuation-vs-own-history + regime context.
+- **Trustworthy math** — both formats reconcile to the cent and are CI-checked (most DIY valuation spreadsheets are quietly wrong).
+- **The right question for story stocks** — a reverse-DCF that shows what growth the price already assumes.
+
+**In one line:** it turns *"is this a good company?"* into *"is this a good company **at this price** — and what price would make it a buy?"*
+
+---
+
 ## ✨ Features
 
 | | |
