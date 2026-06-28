@@ -26,3 +26,6 @@ env/
 *[Cc]itrini*
 26_Trades*
 State_of_the_Themes*
+
+# forecast run output
+driver_forecast.json

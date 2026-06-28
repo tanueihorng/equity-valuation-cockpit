@@ -139,8 +139,11 @@ Equity_Valuation_Cockpit.xlsx     # 9-sheet Excel model
 Equity_Valuation_Cockpit_AAPL.xlsx# worked example (Apple, illustrative inputs)
 build_excel.py / build_apple.py   # regenerate the workbook from source
 USER_GUIDE.md                     # full manual
+forecast/                         # OPTIONAL add-on: TimesFM revenue forecasting -> DCF growth inputs
 assets/                           # screenshots
 ```
+
+> 🔭 **Optional:** [`forecast/`](forecast/) uses Google's TimesFM to forecast a company's *revenue* (a driver of value, **not** the price) and turn it into data-driven `g1..g5` growth inputs + a Monte-Carlo sigma. Fully separate from the zero-dependency core — see [forecast/README.md](forecast/README.md).
 
 > 💡 The HTML is fully static — enable **GitHub Pages** on this repo to host a free live demo.
 
