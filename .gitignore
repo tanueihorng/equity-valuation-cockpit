@@ -1,0 +1,28 @@
+# ── OS / editor cruft ────────────────────────────────
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
+
+# ── Python ───────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# ── Temp / scratch ───────────────────────────────────
+*.tmp
+*.log
+/tmp/
+
+# ── Excel lock files ─────────────────────────────────
+~$*.xlsx
+
+# ── NEVER publish third-party / paid research ────────
+# (belt-and-suspenders: this repo intentionally contains none)
+*.pdf
+*[Cc]itrini*
+26_Trades*
+State_of_the_Themes*

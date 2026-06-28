@@ -1,0 +1,40 @@
+name: build-workbook
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: pip install openpyxl
+      - name: Build the workbook from source
+        run: python3 build_excel.py
+      - name: Verify it loads and has all 9 sheets
+        run: |
+          python3 - <<'PY'
+          import openpyxl, sys
+          wb = openpyxl.load_workbook("Equity_Valuation_Cockpit.xlsx")
+          expected = {"DASHBOARD","ASSUMPTIONS","DCF","RELATIVE","VALUE_HEURISTICS",
+                      "QUALITY","TIMING","SCENARIO_MC","CONTEXT"}
+          got = set(wb.sheetnames)
+          missing = expected - got
+          print("sheets:", wb.sheetnames)
+          if missing:
+              sys.exit(f"FAIL: missing sheets {missing}")
+          print("OK: all 9 sheets present")
+          PY
+      - name: Upload the built workbook
+        uses: actions/upload-artifact@v4
+        with:
+          name: equity-valuation-cockpit-xlsx
+          path: Equity_Valuation_Cockpit.xlsx
